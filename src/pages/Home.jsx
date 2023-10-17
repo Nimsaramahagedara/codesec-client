@@ -23,20 +23,15 @@ const Home = () => {
 
     // }
 
-    //GET PRODUCTS BELONGS TO SELECTED CATEGORY
-    const getProducts = async () => {
-        const result = await authAxios.get(`/recipe/${currentCat}`)
-        setProducts(result.data);
-        // console.log(result.data.meals);
-    }
+
 
     const addToFavorite = async (id) => {
         try {
             const result = await authAxios.put(`/add/${id}`)
-            if(result){
+            if (result) {
                 alert('Added to fav');
             }
-            
+
         } catch (error) {
             console.log(error);
         }
@@ -55,12 +50,18 @@ const Home = () => {
             const result = await authAxios.get(`/recipe/`);
             setCategories(result.data.categories);
         };
-    
+
         getCategories(); // Call the function immediately
     }, []);
-    
+
 
     useEffect(() => {
+        //GET PRODUCTS BELONGS TO SELECTED CATEGORY
+        const getProducts = async () => {
+            const result = await authAxios.get(`/recipe/${currentCat}`)
+            setProducts(result.data);
+            // console.log(result.data.meals);
+        }
         getProducts();
     }, [currentCat])
 
@@ -68,7 +69,7 @@ const Home = () => {
 
     return (
         <>
-            <ProductModal open={isOpen} handleClose={handleCancel} id={viewItem}/>
+            <ProductModal open={isOpen} handleClose={handleCancel} id={viewItem} />
             <div className='py-5'>
                 <div className='mt-0'>
                     {
