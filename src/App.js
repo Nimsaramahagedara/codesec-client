@@ -1,12 +1,9 @@
 import './App.css';
 import SignIn from './pages/SignIn';
-import Container from '@mui/material/Container';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { orange } from '@mui/material/colors';
 import SignUp from './pages/SignUp';
 import Dashboard from './layout/Dashboard';
-import AppBarComponent from './components/AppBar';
 import Home from './pages/Home';
 import Favourites from './pages/Favourites';
 

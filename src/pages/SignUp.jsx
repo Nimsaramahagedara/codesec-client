@@ -7,7 +7,6 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { Container } from '@mui/material';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import logo from '../assets/logo.png';
 import authAxios from '../utils/authAxios';
@@ -26,7 +25,6 @@ const SignUp = () => {
                 password: data.get('password'),
                 firstName: data.get('firstName'),
                 lastName: data.get('lastName'),
-                password: data.get('password'),
                 phoneNumber: data.get('phoneNumber')
             })
             if(result){
@@ -50,7 +48,7 @@ const SignUp = () => {
                 }}
             >
                 <Box>
-                    <img src={logo} className='w-full h-full object-contain'/>
+                    <img src={logo} className='w-full h-full object-contain' alt='logo'/>
                 </Box>
                 <Box sx={{ textAlign: 'left', width: '100%' }}>
                     <Typography component="h1" variant="h6" >

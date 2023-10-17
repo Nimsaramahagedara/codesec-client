@@ -5,7 +5,7 @@ const CategoryBtn = ({ label, onClick }) => {
     const [variant, setVariant] = useState('outlined')
 
     const handleClick = ()=>{
-        if(variant == 'contained'){
+        if(variant === 'contained'){
             setVariant('outlined')
         }else{
             setVariant('contained')

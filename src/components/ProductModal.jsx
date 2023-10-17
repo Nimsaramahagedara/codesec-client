@@ -1,5 +1,4 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
+import React, { useEffect } from 'react';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
@@ -8,9 +7,6 @@ import authAxios from '../utils/authAxios';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
-import IconButton from '@mui/material/IconButton';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 
 const style = {
     position: 'absolute',
@@ -37,7 +33,7 @@ export default function ProductModal({ open, handleClose, id }) {
         }
     }
 
-    React.useEffect(() => {
+    useEffect(() => {
         getItem();
     }, [id])
     return (

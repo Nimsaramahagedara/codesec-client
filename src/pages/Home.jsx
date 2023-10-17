@@ -1,8 +1,6 @@
-import { Button } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import CategoryBtn from '../components/CategoryBtn'
 import RecipeReviewCard from '../components/Card'
-import axios from 'axios'
 import authAxios from '../utils/authAxios'
 import ProductModal from '../components/ProductModal'
 
@@ -12,7 +10,6 @@ const Home = () => {
     const [products, setProducts] = useState([]);
     const [isOpen, setIsOpen] = useState(false);
     const [viewItem, setViewItem] = useState('1');
-    const host = process.env.REACT_APP_SERVER;
 
     //SET THE SELECTED CATEGORY
     const handleClick = (label) => {
@@ -36,7 +33,10 @@ const Home = () => {
     const addToFavorite = async (id) => {
         try {
             const result = await authAxios.put(`/add/${id}`)
-            alert('Added to fav');
+            if(result){
+                alert('Added to fav');
+            }
+            
         } catch (error) {
             console.log(error);
         }

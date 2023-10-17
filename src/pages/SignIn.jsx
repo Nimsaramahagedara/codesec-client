@@ -49,7 +49,7 @@ export default function SignIn() {
                 }}
             >
                 <Box>
-                    <img src={logo} className='w-full h-full object-contain'/>
+                    <img src={logo} className='w-full h-full object-contain' alt='logo'/>
                 </Box>
                 <Typography component="h1" variant="h5" sx={{ width: '100%', textAlign: 'left' }}>
                     Login

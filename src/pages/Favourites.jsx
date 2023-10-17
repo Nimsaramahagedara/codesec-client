@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import RecipeReviewCard from '../components/Card'
-import axios, { all } from 'axios';
 import authAxios from '../utils/authAxios';
 
 const Favourites = () => {

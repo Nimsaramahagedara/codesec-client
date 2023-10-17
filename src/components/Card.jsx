@@ -6,9 +6,6 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
-
-import product from '../assets/product.jpg'
-import { Button } from '@mui/material';
 export default function RecipeReviewCard({prod, name, onClick, handleView}) {
 
     const [added , setAdded] = React.useState();
