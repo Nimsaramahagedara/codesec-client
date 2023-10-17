@@ -23,17 +23,18 @@ const style = {
 export default function ProductModal({ open, handleClose, id }) {
     const [item, setItem] = React.useState({});
 
-    const getItem = async () => {
-        try {
-            const data = await authAxios.get(`/recipe/product/${id}`)
-            const obj = data.data[0];
-            setItem(obj);
-        } catch (error) {
-            console.log(error);
-        }
-    }
+   
 
     useEffect(() => {
+        const getItem = async () => {
+            try {
+                const data = await authAxios.get(`/recipe/product/${id}`)
+                const obj = data.data[0];
+                setItem(obj);
+            } catch (error) {
+                console.log(error);
+            }
+        }
         getItem();
     }, [id])
     return (

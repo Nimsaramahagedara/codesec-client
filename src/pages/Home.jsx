@@ -16,12 +16,12 @@ const Home = () => {
         setCurrentCat(label);
     }
 
-    //GET ALL THE CATEGORIES AVAILABLE
-    const getCategories = async () => {
-        const result = await authAxios.get(`/recipe/`)
-        setCategories(result.data.categories);
+    // //GET ALL THE CATEGORIES AVAILABLE
+    // const getCategories = async () => {
+    //     const result = await authAxios.get(`/recipe/`)
+    //     setCategories(result.data.categories);
 
-    }
+    // }
 
     //GET PRODUCTS BELONGS TO SELECTED CATEGORY
     const getProducts = async () => {
@@ -51,8 +51,14 @@ const Home = () => {
     }
 
     useEffect(() => {
-        getCategories();
-    }, [])
+        const getCategories = async () => {
+            const result = await authAxios.get(`/recipe/`);
+            setCategories(result.data.categories);
+        };
+    
+        getCategories(); // Call the function immediately
+    }, []);
+    
 
     useEffect(() => {
         getProducts();
