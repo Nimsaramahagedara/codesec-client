@@ -92,7 +92,7 @@ export default function SignIn() {
                     </Box>
 
                     <Box sx={{ fontSize: '10px',width:'100%', textAlign:'center',mt:4}}>
-                        <p><span className='text-black'>Don't have an account?</span><Link href="/register" variant="body2" sx={{fontSize:'inherit'}}> Create an account</Link></p>
+                        <p><span className='text-black'>Don't have an account?</span><Link href="#/register" variant="body2" sx={{fontSize:'inherit'}}> Create an account</Link></p>
                     </Box>
 
 
