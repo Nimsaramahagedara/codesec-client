@@ -16,7 +16,12 @@ export default function RecipeReviewCard({prod, name, onClick, handleView}) {
     }
 
     return (
-        <Card onClick={()=>handleView(prod.idMeal)} sx={{maxWidth:'18%'}}>
+        <Card onClick={()=>handleView(prod.idMeal)} sx={{
+            maxWidth: '18%',
+            '@media (max-width: 600px)': {
+                maxWidth: '50%',
+            }
+        }} >
             <CardMedia
                 component="img"
                 width={'50'}
